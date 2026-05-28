@@ -20,7 +20,7 @@
           <calledActivityName xmi:type="expression:Expression" xmi:id="_-WRIA1pIEfGye-OBcXLvfQ" name="" content="" returnTypeFixed="true"/>
           <calledActivityVersion xmi:type="expression:Expression" xmi:id="_-WRIBFpIEfGye-OBcXLvfQ" name="" content="" returnTypeFixed="true"/>
         </elements>
-        <elements xmi:type="process:Task" xmi:id="_K1PxMFpJEfGye-OBcXLvfQ" name="Executar Tarefa Simplista" outgoing="_M44c5FpJEfGye-OBcXLvfQ" incoming="_IQ92kFpJEfGye-OBcXLvfQ" overrideActorsOfTheLane="false">
+        <elements xmi:type="process:Task" xmi:id="_K1PxMFpJEfGye-OBcXLvfQ" name="Executar Tarefa " outgoing="_M44c5FpJEfGye-OBcXLvfQ" incoming="_IQ92kFpJEfGye-OBcXLvfQ" overrideActorsOfTheLane="false">
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_IQ8BYlpJEfGye-OBcXLvfQ" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_IQ8BYVpJEfGye-OBcXLvfQ" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_IQ8BY1pJEfGye-OBcXLvfQ" name="" content="" returnTypeFixed="true"/>
