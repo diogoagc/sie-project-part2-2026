@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<businessObjectModel xmlns="http://documentation.bonitasoft.com/bdm-xml-schema/1.0" modelVersion="1.0">
+    <businessObjects>
+        <businessObject qualifiedName="com.company.model.Pedido">
+            <description></description>
+            <fields>
+                <field type="LONG" length="255" name="id" nullable="false" collection="false"/>
+                <field type="STRING" length="255" name="titulo" nullable="true" collection="false">
+                    <description>Título curto do pedido (ex: "Corrigir bug no login")</description>
+                </field>
+                <field type="STRING" length="255" name="descricao" nullable="true" collection="false">
+                    <description>Detalhe completo do pedido submetido pelo utilizador</description>
+                </field>
+                <relationField type="AGGREGATION" reference="com.company.model.TipoPedido" fetchType="LAZY" name="tipo" nullable="false" collection="false">
+                    <description>Tipo do pedido. Relação com TipoPedido (MELHORIA, ALTERACAO_FUNCIONAL, PROJETO)</description>
+                </relationField>
+                <relationField type="AGGREGATION" reference="com.company.model.StatusPedido" fetchType="LAZY" name="estado" nullable="true" collection="false">
+                    <description>Estado atual do pedido. Relação com StatusPedido (PENDENTE, EM_CLASSIFICACAO, APROVADO_PARA_AVANCO, ENCAMINHADO_COMERCIAL, ENCAMINHADO_PROJETO)</description>
+                </relationField>
+                <field type="INTEGER" length="255" name="estimativaDias" nullable="true" collection="false">
+                    <description>Esforço estimado em dias. Usado no gateway "Ajuste com até 1 dia?"</description>
+                </field>
+                <field type="BOOLEAN" length="255" name="classificacaoValida" nullable="true" collection="false">
+                    <description>true = gestor validou a classificação | false = gestor pediu reavaliação</description>
+                </field>
+                <field type="STRING" length="255" name="observacoesGestor" nullable="true" collection="false">
+                    <description>Notas do gestor quando rejeita a classificação do programador</description>
+                </field>
+                <field type="OFFSETDATETIME" length="255" name="dataCriacao" nullable="true" collection="false">
+                    <description>Data/hora em que o pedido foi submetido (preenchida automaticamente)</description>
+                </field>
+                <field type="OFFSETDATETIME" length="255" name="dataAlteracao" nullable="true" collection="false">
+                    <description>Data/hora da última alteração ao pedido (atualizada em cada step)</description>
+                </field>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="com.company.model.StatusPedido">
+            <fields>
+                <field type="INTEGER" length="255" name="id" nullable="false" collection="false"/>
+                <field type="STRING" length="255" name="designacao" nullable="true" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="com.company.model.TipoPedido">
+            <fields>
+                <field type="INTEGER" length="255" name="id" nullable="false" collection="false"/>
+                <field type="STRING" length="255" name="designacao" nullable="true" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+    </businessObjects>
+</businessObjectModel>
